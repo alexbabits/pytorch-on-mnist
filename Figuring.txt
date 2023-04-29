@@ -1,0 +1,34 @@
+Treating each card as a separate class, resulting in a multiclass classification task. You can curate a dataset that encompasses the 52 cards in their native setting, ensuring a sufficient number of samples for each card class. This dataset can be split into training and validation sets, where the validation sets contain subsets of the 52 cards.
+
+'Back' is the 53rd 'card' for the cards with the back shown.
+
+-Training set may be sufficient to only need the 52 small size standard cards. (maybe the poker table examples too)
+-Validation set should ideally represent the scenarios where you want your model to perform well. This can include both isolated card images and screenshots of poker tables, as well as small and large size, and semi-translucent size from folding during screenshot.
+
+Difference between tradition ML model and ML model based on images:
+
+The key difference is that images are inherently more complex and structured compared to raw tabular data. Images are composed of a grid of pixels, where each pixel contains color or intensity information. This spatial structure needs to be captured and processed by the CNN model to extract meaningful features and patterns for accurate recognition.
+
+The NN architecture, specifically designed for image recognition, consists of convolutional layers that capture spatial patterns, pooling layers that downsample the features, and fully connected layers for classification. These layers collectively learn to extract and represent features from the image data, leading to accurate predictions.
+
+General process for training a CNN model:
+
+a. Data Preparation: Load the images for each card class, preprocess them if necessary (e.g., resize, normalize, augment), and split them into training and validation sets. You can use libraries like OpenCV or PIL for image processing. To convert the image to raw data that can be input to the CNN model, the libraries typically handle tasks such as resizing, normalizing pixel values, and transforming images into appropriate tensor formats that can be processed by the model. This preprocessing step prepares the image data to be fed into the neural network for training and prediction.
+
+b. Model Architecture: Design the architecture of your CNN model using the chosen framework's APIs (e.g., Keras, PyTorch). Specify the layers, activation functions, and other configurations for the model.
+
+c. Model Compilation: Configure the model by specifying the loss function, optimizer, and evaluation metrics. Compile the model using the appropriate framework's APIs.
+
+d. Model Training: Fit the model to the training data using the fit function or similar methods. Specify the number of epochs, batch size, and other training parameters. Monitor the training process to ensure convergence and adjust hyperparameters if needed.
+
+e. Model Evaluation: Evaluate the trained model on the validation set using appropriate metrics to assess its performance. You can use the evaluate function or similar methods.
+
+f. Model Prediction: Once the model is trained and evaluated, you can use it to make predictions on new, unseen data. In your case, you can input screenshots of digital poker tables with multiple cards and use the model to predict the card values and suits.
+
+
+"
+df= pd.read_csv(os.path.join(path,'train_labels.csv'))
+df['class_number'] = df['class'].map(full_dict)
+df.loc[df['class_number'].isnull()]
+"
+
