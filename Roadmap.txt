@@ -1,2 +1,1 @@
-1. Maybe start with Pytorch MNIST and get good accuracy with that
-2. After comfortable with basics of CNNs, see if you can basically re-do the project with 52 cards instead of the 0-9 number dataset.
+Nothing.

@@ -1,10 +1,3 @@
-Treating each card as a separate class, resulting in a multiclass classification task. You can curate a dataset that encompasses the 52 cards in their native setting, ensuring a sufficient number of samples for each card class. This dataset can be split into training and validation sets, where the validation sets contain subsets of the 52 cards.
-
-'Back' is the 53rd 'card' for the cards with the back shown.
-
--Training set may be sufficient to only need the 52 small size standard cards. (maybe the poker table examples too)
--Validation set should ideally represent the scenarios where you want your model to perform well. This can include both isolated card images and screenshots of poker tables, as well as small and large size, and semi-translucent size from folding during screenshot.
-
 Difference between tradition ML model and ML model based on images:
 
 The key difference is that images are inherently more complex and structured compared to raw tabular data. Images are composed of a grid of pixels, where each pixel contains color or intensity information. This spatial structure needs to be captured and processed by the CNN model to extract meaningful features and patterns for accurate recognition.
@@ -23,12 +16,6 @@ d. Model Training: Fit the model to the training data using the fit function or 
 
 e. Model Evaluation: Evaluate the trained model on the validation set using appropriate metrics to assess its performance. You can use the evaluate function or similar methods.
 
-f. Model Prediction: Once the model is trained and evaluated, you can use it to make predictions on new, unseen data. In your case, you can input screenshots of digital poker tables with multiple cards and use the model to predict the card values and suits.
+f. Model Prediction: Once the model is trained and evaluated, you can use it to make predictions on new, unseen data.
 
-
-"
-df= pd.read_csv(os.path.join(path,'train_labels.csv'))
-df['class_number'] = df['class'].map(full_dict)
-df.loc[df['class_number'].isnull()]
-"
 
