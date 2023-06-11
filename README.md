@@ -1,4 +1,4 @@
-MNIST with Pytorch.
+MNIST with Pytorch. Uses basic CNN Machine Learning Model to accurately predict the correct handwritten digits.
 
 https://en.wikipedia.org/wiki/MNIST_database
 
